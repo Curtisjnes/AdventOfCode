@@ -1,0 +1,9 @@
+1:CalorieCounting:
+2:RockPaperScissors:
+3:RucksackReorganization:
+4:CampCleanup:
+5:SupplyStacks:
+6:
+7:
+8:
+9:
