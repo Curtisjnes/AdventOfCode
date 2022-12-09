@@ -29,9 +29,9 @@ public class CalorieCounting {
         int index = 0;
         int sum = 0;
         for ( int i  = 0; i < select.getIntAllData().size(); i++){
-            select.writeToFile( "",index, sum, select.getIntAllData(),i, 1);
+            select.writeToFile( "",index, sum, select.getIntAllData(),i, 1, "", "");
             sum = sum + select.getIntAllData().get(i);
-            select.writeToFile("",index, sum, select.getIntAllData(),i, 2);
+            select.writeToFile("",index, sum, select.getIntAllData(),i, 2, "", "");
             if (select.getIntAllData().get(i) == 0 ) { //Wenn in der liste Null steht, nimmt die Liste einfach die Null auf, weil null unmöglich das höchste Ergebnis sein kann
                 index = sum;
                 sum = 0;
@@ -65,9 +65,9 @@ public class CalorieCounting {
                         cache = topThree[j];
                         topThree[j] = sum;
                         pushed = true;
-                        select.writeToFile("Pushed: ", sum, 0 , select.getIntAllData(), j, 3);
+                        select.writeToFile("Pushed: ", sum, 0 , select.getIntAllData(), j, 3, "", "");
                         if (topThree[j] != 0 ){
-                            select.writeToFile("Popped: ", indexArray, cache, select.getIntAllData(), j, 4);
+                            select.writeToFile("Popped: ", indexArray, cache, select.getIntAllData(), j, 4, "", "");
                             pushed = true;
                             break;
                         }

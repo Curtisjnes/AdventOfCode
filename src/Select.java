@@ -41,7 +41,7 @@ public class Select {
 
     }
 
-    public void writeToFile(String action, int index, int sum, List<Integer> intAllData, int i, int indicator){
+    public void writeToFile(String action, int index, int sum, List<Integer> intAllData, int i, int indicator, String playerMove, String opponentMove){
         try {
             if (indicator == 1) {
                 myWriter.write("Folgendes Ergebnis wurde Berechnet: " + String.valueOf(sum) + " + " + String.valueOf(intAllData.get(i)) + " = ");
@@ -53,6 +53,9 @@ public class Select {
                 myWriter.write(System.getProperty( "line.separator" ));
             } else if (indicator == 5) {
                 myWriter.write(action + " Cache " + String.valueOf(index) + " sum " + String.valueOf(sum)  + " topThree[i] " + String.valueOf(i));
+                myWriter.write(System.getProperty( "line.separator" ));
+            } else if (indicator == 6 ) {
+                myWriter.write(action + " " + playerMove + "Gegner Spielt: " + opponentMove);
                 myWriter.write(System.getProperty( "line.separator" ));
             } else {
                 myWriter.write( " " + String.valueOf(sum));

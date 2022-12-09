@@ -1,0 +1,10 @@
+
+ Opponent:
+    Rock =  A
+    Paper = B
+    Scissors = C
+
+ player:
+    Rock = X
+    Paper = Y
+    Scissors = Z
