@@ -1,64 +1,35 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class RockPaperScissors {
 
     Select select = new Select();
 
     private String filePath = "C:\\Users\\cjones\\IdeaProjects\\AdventOfCodePuzzles\\src\\PuzzleInput\\RockPaperScissors\\RPSInput.txt";
-    String move = null;
-    String oMove = null;
+
+    List <Character> allPlayerMoves = new ArrayList<>();
+    List <Character> allOpponentMoves = new ArrayList<>();
+    String player = "XYZ";
+    int j = 0;
+    String opponent = "ABC";
     public void solution(){
         select.pullAndSaveFile(filePath);
-        System.out.println(select.getAllData());
+
         for (int i = 0; i < select.getAllData().size(); i++){
-            parseMove(i);
-        }
-    }
-
-    private int sumGame(String move, String oMove){
-        int result = 0;
-        boolean draw = false;
-        boolean playerWins = false;
-        boolean opponentWins = false;
-
-
-
-        return result;
-    }
-
-    private String getFullMove(char playerMove, char opponentMove){
-        if (playerMove == 'A' || opponentMove == 'X'){
-            move = "Stein";
-        }else if (playerMove == 'B' || opponentMove == 'Y'){
-            move = "Papier";
-        } else if (playerMove == 'C' || opponentMove == 'Z') {
-            move = "Schere";
-        }
-        return move;
-    }
-
-    private void parseMove(int index){
-        String fullRound = select.getAllData().get(index).toString();
-
-        char [] roundToChar = fullRound.toCharArray();
-        char opponentMove = 0;
-        char playerMove = 0;
-        
-        for (int i = 0; i < roundToChar.length; i++){
-            if (roundToChar[i] == 'A' || roundToChar[i] == 'B' || roundToChar[i] == 'C'){
-                opponentMove = roundToChar[i];
-                oMove = getFullMove('0',opponentMove);
-
-            } else if (roundToChar[i] == 'X' || roundToChar[i] == 'Y' || roundToChar[i] == 'Z') {
-                playerMove = roundToChar[i];
-                move = getFullMove(playerMove,'0');
+            if(select.getAllData().get(i).contains(player.charAt(j))){
+                int findIndexOfMove = select.getAllData().get(i).indexOf(player.charAt(j));
+                allPlayerMoves.add(select.getAllData().get(i).charAt(findIndexOfMove));
+            } else if (select.getAllData().get(i).contains(opponent.charAt(j))) {
+                int findIndexOfMove = select.getAllData().get(i).indexOf(opponent.charAt(j));
+                allOpponentMoves.add(select.getAllData().get(i).charAt(findIndexOfMove));
             }
+            j++;
         }
-        
-        select.writeToFile("Spieler spielt:", 0,0, select.getIntAllData(), 0, 6, String.valueOf(move),String.valueOf(oMove));
+        System.out.println(allPlayerMoves);
+        System.out.println(allOpponentMoves);
     }
-
     public RockPaperScissors() throws IOException {
     }
 }

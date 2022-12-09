@@ -1,8 +1,12 @@
 
+Draw -> Move + 3
+Win -> Move + 6
+Loss -> +1
+
  Opponent:
-    Rock =  A
-    Paper = B
-    Scissors = C
+    Rock =  A -> 1pt
+    Paper = B -> 2pt
+    Scissors = C -> 3pt
 
  player:
     Rock = X

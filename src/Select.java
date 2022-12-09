@@ -55,7 +55,7 @@ public class Select {
                 myWriter.write(action + " Cache " + String.valueOf(index) + " sum " + String.valueOf(sum)  + " topThree[i] " + String.valueOf(i));
                 myWriter.write(System.getProperty( "line.separator" ));
             } else if (indicator == 6 ) {
-                myWriter.write(action + " " + playerMove + "Gegner Spielt: " + opponentMove);
+                myWriter.write(action + " " + playerMove + " Gegner Spielt: " + opponentMove);
                 myWriter.write(System.getProperty( "line.separator" ));
             } else {
                 myWriter.write( " " + String.valueOf(sum));
