@@ -8,6 +8,11 @@ Loss -> +1
     Paper = B -> 2pt
     Scissors = C -> 3pt
 
+    Rock > Scissors
+    Scissors > Paper
+    Paper > Rock
+
+
  player:
     Rock = X
     Paper = Y
