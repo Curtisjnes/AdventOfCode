@@ -7,8 +7,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
     CalorieCounting c = new CalorieCounting();
+    CampCleanup ca = new CampCleanup();
 
-    c.start();
+    ca.start();
+
 
     }
     public void selectPuzzle(){
